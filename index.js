@@ -16,7 +16,13 @@ function clearDisplay() {
 }
 
 function calculate() {
-    let result = eval(displayText);
-    displayText = result;
-    displayEl.value = result;
+    try {
+        let result = eval(displayText);
+        displayText = result;
+        displayEl.value = result;
+    }
+    catch(error){
+        displayText = "";
+        displayEl.value = "Math Error.";
+    }
 }
